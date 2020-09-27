@@ -25,3 +25,17 @@ Route::get('hello/edit', 'App\Http\Controllers\HelloController@edit');
 Route::post('hello/edit', 'App\Http\Controllers\HelloController@update');
 Route::get('hello/del', 'App\Http\Controllers\HelloController@del');
 Route::post('hello/del', 'App\Http\Controllers\HelloController@remove');
+
+Route::get('person', 'App\Http\Controllers\PersonController@index');
+Route::get('person/find', 'App\Http\Controllers\PersonController@find');
+Route::post('person/find', 'App\Http\Controllers\PersonController@search');
+Route::get('person/add', 'App\Http\Controllers\PersonController@add');
+Route::post('person/add', 'App\Http\Controllers\PersonController@create');
+Route::get('person/edit', 'App\Http\Controllers\PersonController@edit');
+Route::post('person/edit', 'App\Http\Controllers\PersonController@update');
+Route::get('person/delete', 'App\Http\Controllers\PersonController@delete');
+Route::post('person/delete', 'App\Http\Controllers\PersonController@remove');
+
+Route::get('board', 'App\Http\Controllers\BoardController@index');
+Route::get('board/add', 'App\Http\Controllers\BoardController@add');
+Route::post('board/add', 'App\Http\Controllers\BoardController@create');
