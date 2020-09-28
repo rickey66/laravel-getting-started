@@ -25,6 +25,9 @@ Route::get('hello/edit', 'App\Http\Controllers\HelloController@edit');
 Route::post('hello/edit', 'App\Http\Controllers\HelloController@update');
 Route::get('hello/del', 'App\Http\Controllers\HelloController@del');
 Route::post('hello/del', 'App\Http\Controllers\HelloController@remove');
+Route::get('hello/rest', 'App\Http\Controllers\HelloController@rest');
+Route::get('hello/session', 'App\Http\Controllers\HelloController@ses_get');
+Route::post('hello/session', 'App\Http\Controllers\HelloController@ses_put');
 
 Route::get('person', 'App\Http\Controllers\PersonController@index');
 Route::get('person/find', 'App\Http\Controllers\PersonController@find');
@@ -39,3 +42,9 @@ Route::post('person/delete', 'App\Http\Controllers\PersonController@remove');
 Route::get('board', 'App\Http\Controllers\BoardController@index');
 Route::get('board/add', 'App\Http\Controllers\BoardController@add');
 Route::post('board/add', 'App\Http\Controllers\BoardController@create');
+
+Route::resource('rest', 'App\Http\Controllers\RestappController');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
