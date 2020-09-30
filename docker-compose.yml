@@ -12,6 +12,8 @@ services:
     app:
         build: ./docker/php
         image: php:7.3-fpm
+        environment:
+          PHP_XDEBUG_ENABLED: 1
         volumes:
           - .:/var/www/html
         depends_on:
